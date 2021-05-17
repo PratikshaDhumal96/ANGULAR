@@ -4,15 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StructDirectiveComponent } from './struct-directive/struct-directive.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import{ReactiveFormsModule}from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StructDirectiveComponent
+    StructDirectiveComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
