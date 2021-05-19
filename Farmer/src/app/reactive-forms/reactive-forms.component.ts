@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl,FormBuilder } from '@angular/forms';
+import { FormGroup,FormControl,FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -14,10 +14,21 @@ export class ReactiveFormsComponent implements OnInit {
   checkoutForm:FormGroup;
 
   constructor(private formBuilder:FormBuilder) {
+
+    // this.checkoutForm=this.formBuilder.group({
+    //   emailAdd:new FormControl(),
+    //   quant:new FormControl(),
+    //   checkBox:new FormControl()
+    //  });
+
     this.checkoutForm=this.formBuilder.group({
-      emailAdd:new FormControl(),
-      quant:new FormControl(),
-      checkBox:new FormControl()
+      emailAdd:['',[Validators.required,
+                    Validators.email,
+                    Validators.minLength(5)
+                   ]
+               ],
+      quant:['',[Validators.required,Validators.minLength(3)]],
+      checkBox:['',Validators.requiredTrue]
      });
 
    }

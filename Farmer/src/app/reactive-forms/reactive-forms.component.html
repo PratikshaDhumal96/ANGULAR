@@ -8,16 +8,25 @@
         <div class="form-group">
           <label for="email">Email address:</label>
           <input type="email" class="form-control" formControlName="emailAdd" placeholder="Enter email" id="email">
+          <span *ngIf="checkoutForm.get('emailAdd').touched && checkoutForm.get('emailAdd').hasError('required')">Enter E-mail address!</span>
+          <span *ngIf="checkoutForm.get('emailAdd').hasError('email')">Enter valid e-mail!</span>
+          <span *ngIf="checkoutForm.get('emailAdd').hasError('minlength')">Minimum 5 characters required.</span>
         </div>
+        <!-- here we define type="text" after that here minlength validation worked -->
         <div class="form-group">
           <label for="pwd">Quantity:</label>
-          <input type="number" class="form-control" formControlName="quant" placeholder="Enter password" id="pwd">
+          <input type="text" class="form-control" formControlName="quant" placeholder="Enter Quantity" id="pwd">
+          <span *ngIf="checkoutForm.get('quant').touched && checkoutForm.get('quant').hasError('required')">Enter Quantity!</span>
+          <span *ngIf="checkoutForm.get('quant').hasError('minlength')">Minimum 3 numbers required!</span>
+          <!-- <span *ngIf="checkoutForm.get('quant').touched && checkoutForm.get('quant').hasError('required')">Enter Quantity...</span>
+          <span *ngIf="checkoutForm.get('quant').touched && checkoutForm.get('quant').hasError('minlength')">Enter Minimum 3 numbers required.</span>
+          <span *ngIf="checkoutForm.get('quant').hasError('maxlength')">Enter maximum 5 numbers.</span> -->
         </div>
         <div class="form-group form-check">
           <label class="form-check-label">
             <input class="form-check-input" formControlName="checkBox" type="checkbox"> Remember me
           </label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Submit</button>
       </form>
 </div>
