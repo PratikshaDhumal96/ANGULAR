@@ -1,0 +1,13 @@
+<table>
+    <tr>
+      <th>empName</th>
+      <th>Item</th>
+      <th>overallInv</th>
+   
+    </tr>
+    <tr *ngFor="let item of dataExt">
+      <td [attr.rowspan]="item.empSpan" *ngIf="item.empSpan">{{ item.empName }}</td>
+      <td>{{ item.item }}</td>
+      <td [attr.rowspan]="item.invSpan" *ngIf="item.invSpan">{{ item.overallInv }}</td>
+    </tr>
+</table>
