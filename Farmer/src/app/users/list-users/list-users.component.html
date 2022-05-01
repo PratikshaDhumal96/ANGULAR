@@ -1,0 +1,6 @@
+<p>list-users works!</p>
+
+<app-filter-users [userName]="'pratiksha'" (UserDetails)="UserDetailfromChild($event)"></app-filter-users>
+
+<p>Here is the list of users from child component={{UseDetails | json}} </p>
+
