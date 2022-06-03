@@ -8,6 +8,25 @@
 
 <app-reactive-forms></app-reactive-forms> -->
 
-<app-list-users></app-list-users>
+<!-- <app-list-users></app-list-users> -->
+<!-- <input type="radio" name="r" (click)="color='red'" >Red
+<input type="radio" name="r" (click)="color='green'" >Green
+<input type="radio" name="r" (click)="color='blue'">Blue -->
+
+
+<!-- <h1 appHighlighter>This is highlighter check </h1> -->
+<!-- <p [myHighlightColor]="color">check is applied!!!</p> -->
+
+
+
+
+<h2>Pick a highlight color</h2>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appHighlighter]="color">Highlight me!</p>
+
 <router-outlet></router-outlet>
 

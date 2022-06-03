@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { StructDirectiveComponent } from './struct-directive/struct-directive.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import{ReactiveFormsModule}from '@angular/forms';
-import{UsersModule} from './users/users.module'
+import{UsersModule} from './users/users.module';
+import { HighlighterDirective } from './Directive/highlighter.directive'
 
 @NgModule({
   declarations: [
     AppComponent,
     StructDirectiveComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    HighlighterDirective
   ],
   imports: [
     BrowserModule,

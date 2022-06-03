@@ -10,6 +10,7 @@ import {environment} from '../environments/environment';
 
 
 export class AppComponent {
+  color = '';
 
   hostUrl = environment.hostUrl;
   hostUName= environment.userName;
